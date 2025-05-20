@@ -1,51 +1,55 @@
-# 🔗 shortestpath-aybukekucuk
+# shortestpath-aybukekucuk
 
-Bu Python paketi, yönlendirilmiş ve ağırlıklı bir graf üzerinde en kısa yolu hesaplamak için **Dijkstra Algoritması**'nı uygular. Proje, Hacettepe Üniversitesi Geomatik Mühendisliği kapsamında geliştirilmiştir.
+Bu proje, **Dijkstra algoritması** kullanarak iki nokta arasındaki en kısa yolu bulmamıza yardımcı olan basit ama işlevsel bir Python modülüdür. Özellikle algoritma derslerinde ya da yol bulma uygulamaları geliştirmek isteyenler için ideal.
 
 ---
 
-## İçindekiler
+## Görsel Anlatım
 
-- [Kurulum](#kurulum)
-- [Kullanım](#kullanım)
-- [Fonksiyon Açıklamaları](#fonksiyon-açıklamaları)
-- [Görsel Anlatım](#görsel-anlatım)
-- [Testler](#testler)
-- [Lisans](#lisans)
+Aşağıdaki GIF, Dijkstra algoritmasının nasıl çalıştığını animasyonlu şekilde göstermektedir:
+
+![Dijkstra Görseli](https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif)
 
 ---
 
 ## Kurulum
 
-PyPI üzerinden kolayca yüklenebilir:
+Paketi test PyPI üzerinden kurmak için:
 
 ```bash
-pip install shortestpath-aybukekucuk
+pip install -i https://test.pypi.org/simple/ shortestpath-aybukekucuk
 
 ## Kullanım
 
-from shortestpath import dijkstra
+from shortestpath import dijkstra_shortest_path
 
-# Örnek graf
 graph = {
-    'A': {'B': 1, 'C': 4},
-    'B': {'C': 2, 'D': 5},
+    'A': {'B': 2, 'C': 5},
+    'B': {'C': 1, 'D': 4},
     'C': {'D': 1},
     'D': {}
 }
 
-# A noktasından D noktasına en kısa yol
-distance, path = dijkstra(graph, 'A', 'D')
-
+distance, path = dijkstra_shortest_path(graph, 'A', 'D')
 print("En kısa mesafe:", distance)
 print("İzlenen yol:", path)
 
-##  Örnek Çıktı:
-En kısa mesafe: 6
+çıktı:
+En kısa mesafe: 4
 İzlenen yol: ['A', 'B', 'C', 'D']
 
-![Dijkstra Örnek Grafiği](assets/graph.png)
+## Klasör Yapısı
 
-## Test
-pytest
-
+shortestpath_project/
+│
+├── shortestpath/
+│   ├── __init__.py
+│   └── shortestpath.py
+│
+├── tests/
+│   └── test_shortestpath.py
+│
+├── README.md
+├── pyproject.toml
+├── requirements.txt
+└── LICENSE
