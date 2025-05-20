@@ -11,6 +11,11 @@ Aşağıdaki GIF, Dijkstra algoritmasının nasıl çalıştığını animasyonl
 ![Dijkstra Görseli](https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif)
 
 ---
+## Fonksiyon tablosu
+
+| Fonksiyon Adı             | Açıklama                                                   | Parametreler                          | Dönüş Değeri                        |
+|--------------------------|------------------------------------------------------------|----------------------------------------|-------------------------------------|
+| `dijkstra_shortest_path` | İki nokta arasındaki en kısa yolu Dijkstra algoritması ile bulur. | `graph: dict, start: str, end: str` | `(mesafe: int, yol: list[str])`     |
 
 ## Kurulum
 
@@ -53,9 +58,3 @@ shortestpath_project/
 ├── pyproject.toml
 ├── requirements.txt
 └── LICENSE
-
-## Fonksiyon Özeti Tablosu
-
-| Fonksiyon Adı             | Açıklama                                                   | Parametreler                          | Dönüş Değeri                        |
-|--------------------------|------------------------------------------------------------|----------------------------------------|-------------------------------------|
-| `dijkstra_shortest_path` | İki nokta arasındaki en kısa yolu Dijkstra algoritması ile bulur. | `graph: dict, start: str, end: str` | `(mesafe: int, yol: list[str])`     |
