@@ -53,3 +53,7 @@ shortestpath_project/
 ├── pyproject.toml
 ├── requirements.txt
 └── LICENSE
+
+| Fonksiyon Adı            | Açıklama                                                  | Parametreler                        | Dönüş Değeri                    |
+| ------------------------ | --------------------------------------------------------- | ----------------------------------- | ------------------------------- |
+| `dijkstra_shortest_path` | Başlangıç ve bitiş düğümleri arasında en kısa yolu bulur. | `graph: dict, start: str, end: str` | `(mesafe: int, yol: list[str])` |
