@@ -1,4 +1,8 @@
 import heapq
+import logging
+
+# Logging ayarları: seviyeyi INFO yaptım, zaman, seviye ve mesaj görünüyor
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def shortest_path(graph, start, end):
     """
@@ -13,24 +17,29 @@ def shortest_path(graph, start, end):
     Ulaşılamıyorsa (inf, []), başarıyla çalışır.
     """
 
+    logging.info(f"Algoritma başladı. Başlangıç: {start}, Hedef: {end}")
+
     # 1) NEGATİF AĞIRLIK KONTROLÜ
     for node, komsular in graph.items():
         for agirlik in komsular.values():
             if agirlik < 0:
-                # Ben negatif ağırlık kabul etmiyorum
+                logging.error("Negatif ağırlık tespit edildi. Dijkstra bunu sevmez!")
                 raise KeyError("Graf negatif ağırlık içeremez")
 
     # 2) Kuyruk ve ziyaret kayıtlarını hazırlıyorum
     queue = []
     heapq.heappush(queue, (0, start, [start]))
     visited = {start: 0}
+    logging.info(f"{start} düğümü kuyruğa eklendi.")
 
     # 3) Kuyruk boşalana kadar en kısa yolu aramaya devam ediyorum
     while queue:
         cost, node, path = heapq.heappop(queue)
+        logging.info(f"{node} düğümüne geldim. Maliyet: {cost}, Yol: {path}")
 
-        # Hedefe ulaştıysam gider
+        # Hedefe ulaştıysam bitir
         if node == end:
+            logging.info(f"Hedef {end} bulundu! Toplam maliyet: {cost}, İzlenen yol: {path}")
             return cost, path
 
         # Değilse komşuları gez
@@ -39,8 +48,10 @@ def shortest_path(graph, start, end):
             if neighbor not in visited or new_cost < visited[neighbor]:
                 visited[neighbor] = new_cost
                 heapq.heappush(queue, (new_cost, neighbor, path + [neighbor]))
+                logging.info(f"{neighbor} komşusu kuyruğa eklendi. Yeni maliyet: {new_cost}")
 
     # 4) Hedefe hiç ulaşılamadıysa
+    logging.warning(f"{end} düğümüne ulaşılamadı. Geri dönüş: inf, []")
     return float('inf'), []
 
 if __name__ == "__main__":
