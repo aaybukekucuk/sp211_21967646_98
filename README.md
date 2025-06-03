@@ -26,6 +26,19 @@ Aşağıdaki GIF, Dijkstra algoritmasının nasıl çalıştığını animasyonl
 | `dijkstra_shortest_path` | İki nokta arasındaki en kısa yolu Dijkstra algoritması ile bulur. | `graph: dict, start: str, end: str` | `(mesafe: int, yol: list[str])`     |
 
 ---
+## AI Usage – How I Benefited
+In this project, I utilized artificial intelligence (AI) technology, specifically OpenAI's ChatGPT model, to assist me throughout the development process. I leveraged AI support to learn best practices and solve challenges related to coding and Python package development.
+
+    - Specifically, AI helped me with:
+    - Creating the Python package structure and setup.py file,
+    - Resolving issues with Git and GitHub workflows,
+    - Integrating logging functionality,
+
+Using AI guidance saved me time and improved the overall quality of the project.
+
+My level of AI usage 4/5
+
+---
 
 ## Kurulum
 
@@ -34,7 +47,9 @@ Paketi PyPI üzerinden kurmak için:
 ```bash
 pip install shortestpath-aybukekucuk
 
-Klasör yapısı
+---
+
+Module Structure
 shortestpath_project/
 │
 ├── shortestpath/
