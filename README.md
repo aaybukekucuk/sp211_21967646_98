@@ -41,11 +41,11 @@ My level of AI usage 4/5
 ---
 ## Logging Kullanımı
 
-Bu projede, programın çalışma sürecinde oluşan önemli olayları takip etmek için Python’un standart logging modülü kullanılmıştır. logging sayesinde hata mesajları, uyarılar veya bilgi mesajları kayıt altına alınabilir ve böylece kodun nasıl çalıştığını anlamak ve hataları kolayca tespit etmek mümkün olur.
+Bu projede, programın çalışma sürecinde oluşan önemli olayları takip etmek için Python’un standart logging modülü kullandım. Logging sayesinde hata mesajları, uyarılar veya bilgi mesajları kayıt altına alınabilir ve böylece kodun nasıl çalıştığını anlamak ve hataları kolayca tespit etmek mümkün olur.
 
 import logging
 
-# Logging seviyesini ayarla
+Logging seviyesini ayarla
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 logging.info("Program başladı.")
