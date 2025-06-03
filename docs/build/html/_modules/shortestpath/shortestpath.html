@@ -33,6 +33,10 @@
             
   <h1>shortestpath.shortestpath öğesinin kaynak kodu</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span><span class="w"> </span><span class="nn">heapq</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="c1"># Logging ayarları: seviyeyi INFO yaptım, zaman, seviye ve mesaj görünüyor</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> - </span><span class="si">%(levelname)s</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <div class="viewcode-block" id="shortest_path">
 <a class="viewcode-back" href="../../modules.html#shortestpath.shortestpath.shortest_path">[belgeler]</a>
@@ -49,24 +53,29 @@
 <span class="sd">    Ulaşılamıyorsa (inf, []), başarıyla çalışır.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Algoritma başladı. Başlangıç: </span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2">, Hedef: </span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
     <span class="c1"># 1) NEGATİF AĞIRLIK KONTROLÜ</span>
     <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">komsular</span> <span class="ow">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="k">for</span> <span class="n">agirlik</span> <span class="ow">in</span> <span class="n">komsular</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">agirlik</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="c1"># Ben negatif ağırlık kabul etmiyorum</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Negatif ağırlık tespit edildi. Dijkstra bunu sevmez!&quot;</span><span class="p">)</span>
                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Graf negatif ağırlık içeremez&quot;</span><span class="p">)</span>
 
     <span class="c1"># 2) Kuyruk ve ziyaret kayıtlarını hazırlıyorum</span>
     <span class="n">queue</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="p">[</span><span class="n">start</span><span class="p">]))</span>
     <span class="n">visited</span> <span class="o">=</span> <span class="p">{</span><span class="n">start</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">start</span><span class="si">}</span><span class="s2"> düğümü kuyruğa eklendi.&quot;</span><span class="p">)</span>
 
     <span class="c1"># 3) Kuyruk boşalana kadar en kısa yolu aramaya devam ediyorum</span>
     <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
         <span class="n">cost</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">path</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2"> düğümüne geldim. Maliyet: </span><span class="si">{</span><span class="n">cost</span><span class="si">}</span><span class="s2">, Yol: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-        <span class="c1"># Hedefe ulaştıysam gider</span>
+        <span class="c1"># Hedefe ulaştıysam bitir</span>
         <span class="k">if</span> <span class="n">node</span> <span class="o">==</span> <span class="n">end</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hedef </span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2"> bulundu! Toplam maliyet: </span><span class="si">{</span><span class="n">cost</span><span class="si">}</span><span class="s2">, İzlenen yol: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">cost</span><span class="p">,</span> <span class="n">path</span>
 
         <span class="c1"># Değilse komşuları gez</span>
@@ -75,8 +84,10 @@
             <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span> <span class="ow">or</span> <span class="n">new_cost</span> <span class="o">&lt;</span> <span class="n">visited</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]:</span>
                 <span class="n">visited</span><span class="p">[</span><span class="n">neighbor</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_cost</span>
                 <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">queue</span><span class="p">,</span> <span class="p">(</span><span class="n">new_cost</span><span class="p">,</span> <span class="n">neighbor</span><span class="p">,</span> <span class="n">path</span> <span class="o">+</span> <span class="p">[</span><span class="n">neighbor</span><span class="p">]))</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">neighbor</span><span class="si">}</span><span class="s2"> komşusu kuyruğa eklendi. Yeni maliyet: </span><span class="si">{</span><span class="n">new_cost</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="c1"># 4) Hedefe hiç ulaşılamadıysa</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2"> düğümüne ulaşılamadı. Geri dönüş: inf, []&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">),</span> <span class="p">[]</span></div>
 
 

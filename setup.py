@@ -1,12 +1,24 @@
 from setuptools import setup, find_packages
 
-# Ben projemi paket olarak yükleyebilmek için bu bilgileri hazırladım
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 setup(
-    name='shortestpath',                             # Paket adı
-    version='0.1.0',                                 # Sürüm numarası
-    description='En kısa yol hesaplama modülü',      # Kısa açıklama
-    author='Aybuke Kucuk',                           # Benim adım
-    packages=find_packages(),                        # "shortestpath" klasörünü otomatik bulur
-    install_requires=[],                             # Başka bağımlılık yok
-    python_requires='>=3.7',                         # Desteklenen minimum Python sürümü
+    name='sp211_21967646_98/-aybukekucuk',
+    version='0.1.1',
+    author='Aybuke Kucuk',
+    author_email='aaybukekucuk@gmail.com',  
+    description='Kısa yol algoritmalarını içeren örnek Python paketi',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    url='https://github.com/aybukekucuk/shortestpath-aybukekucuk',  
+    packages=find_packages(),
+    install_requires=[
+        'numpy>=1.21.0',
+    ],
+    classifiers=[
+        'Programming Language :: Python :: 3',
+        'Operating System :: OS Independent',
+    ],
+    python_requires='>=3.6',
 )
