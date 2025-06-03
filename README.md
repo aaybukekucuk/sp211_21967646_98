@@ -13,9 +13,9 @@ Bu proje, **Dijkstra algoritması** kullanarak iki nokta arasındaki en kısa yo
 
 ## Görsel Anlatım
 
-Aşağıdaki GIF, Dijkstra algoritmasının nasıl çalıştığını animasyonlu şekilde göstermektedir:
+Aşağıdaki görsel oluşturduğum Sphinx dökümantasyonun web ekran görüntüsü:
 
-![Dijkstra Görseli](https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif)
+![Sphinx Ekran Görüntüsü ](https://github.com/user-attachments/assets/d65c1e61-100f-4301-93c6-5f4b39a20083)
 
 ---
 
@@ -37,6 +37,20 @@ In this project, I utilized artificial intelligence (AI) technology, specificall
 Using AI guidance saved me time and improved the overall quality of the project.
 
 My level of AI usage 4/5
+
+---
+## Logging Kullanımı
+
+Bu projede, programın çalışma sürecinde oluşan önemli olayları takip etmek için Python’un standart logging modülü kullanılmıştır. logging sayesinde hata mesajları, uyarılar veya bilgi mesajları kayıt altına alınabilir ve böylece kodun nasıl çalıştığını anlamak ve hataları kolayca tespit etmek mümkün olur.
+
+import logging
+
+# Logging seviyesini ayarla
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+logging.info("Program başladı.")
+logging.warning("Bu bir uyarı mesajıdır.")
+logging.error("Bir hata oluştu.")
 
 ---
 
@@ -65,3 +79,6 @@ shortestpath_project/
 └── LICENSE
 
 ---
+
+Not: GitHub Classroom üzerinden gönderim sırasında teknik sorunlar yaşadım. Classroom bağlantısıyla ilişkilendirilmiş repo üzerinde push/pull işlemleri sırasında kimlik doğrulama hataları aldım ve çözüme ulaşamadım. Bu nedenle, projemi kişisel GitHub hesabımda 
+[bu repo](https://github.com/aaybukekucuk/sp211_21967646_98.git) üzerinden eksiksiz şekilde yayımladım.
