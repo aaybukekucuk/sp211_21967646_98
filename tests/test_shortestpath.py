@@ -1,7 +1,7 @@
 # tests/test_shortestpath.py
 
 import pytest
-from shortestpath.shortestpath import shortest_path
+from sp211_21967646_98.shortestpath import shortest_path
 
 def test_basit_graf_tek_adim():
     # Ben A'dan B'ye olan doğrudan bağlantıyı test ediyorum

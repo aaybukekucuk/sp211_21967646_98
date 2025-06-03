@@ -1,0 +1,10 @@
+README.md
+setup.py
+shortestpath/__init__.py
+shortestpath/shortestpath.py
+sp211_21967646_98.egg-info/PKG-INFO
+sp211_21967646_98.egg-info/SOURCES.txt
+sp211_21967646_98.egg-info/dependency_links.txt
+sp211_21967646_98.egg-info/requires.txt
+sp211_21967646_98.egg-info/top_level.txt
+tests/test_shortestpath.py
