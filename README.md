@@ -17,6 +17,7 @@ Aşağıdaki görsel oluşturduğum Sphinx dökümantasyonun web ekran görünt�
 
 ![Sphinx Ekran Görüntüsü ](https://github.com/user-attachments/assets/d65c1e61-100f-4301-93c6-5f4b39a20083)
 
+index.html.url : file:///C:/Users/ELV%C4%B0N/Desktop/sp211_21967646_98/docs/build/html/index.html
 ---
 
 ## Fonksiyon tablosu
