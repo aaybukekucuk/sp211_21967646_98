@@ -1,4 +1,4 @@
-# shortestpath-aybukekucuk
+# sp211_21967646_98
 
 Bu proje, **Dijkstra algoritması** kullanarak iki nokta arasındaki en kısa yolu bulmamıza yardımcı olan basit ama işlevsel bir Python modülüdür. Özellikle algoritma derslerinde ya da yol bulma uygulamaları geliştirmek isteyenler için ideal.
 
@@ -8,7 +8,7 @@ Bu proje, **Dijkstra algoritması** kullanarak iki nokta arasındaki en kısa yo
 - Student Number: 21967646  
 - DD Code: 98  
 - Course: SP211 – Data Structures and Algorithms  
-- 
+
 ---
 
 ## Görsel Anlatım
@@ -34,17 +34,19 @@ Paketi PyPI üzerinden kurmak için:
 ```bash
 pip install shortestpath-aybukekucuk
 
-## Klasör yapısı
+Klasör yapısı
 shortestpath_project/
 │
 ├── shortestpath/
-│   ├── __init__.py
-│   └── shortestpath.py
+│ ├── init.py
+│ └── shortestpath.py
 │
 ├── tests/
-│   └── test_shortestpath.py
+│ └── test_shortestpath.py
 │
 ├── README.md
 ├── pyproject.toml
 ├── requirements.txt
 └── LICENSE
+
+---
