@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - feature/mean-function
   pull_request:
     branches:
       - main
@@ -36,13 +35,10 @@ jobs:
         run: |
           python setup.py sdist bdist_wheel
 
-      - name: Show branch info
-        run: echo "Current branch: ${{ github.ref }}"
-
       - name: Publish package to TestPyPI
         if: github.ref == 'refs/heads/main'
         env:
           TWINE_USERNAME: ${{ secrets.TEST_PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TEST_PYPI_PASSWORD }}
         run: |
-          python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/
+          python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
