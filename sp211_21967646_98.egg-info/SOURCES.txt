@@ -1,13 +1,12 @@
 README.md
 setup.py
 sp211_21967646_98/__init__.py
-sp211_21967646_98/setup.py
-sp211_21967646_98/shortestpath.py
+sp211_21967646_98/mean_custom.py
 sp211_21967646_98.egg-info/PKG-INFO
 sp211_21967646_98.egg-info/SOURCES.txt
 sp211_21967646_98.egg-info/dependency_links.txt
 sp211_21967646_98.egg-info/requires.txt
 sp211_21967646_98.egg-info/top_level.txt
-sp211_21967646_98/sp211_21967646_98/__init__.py
-sp211_21967646_98/sp211_21967646_98/shortestpath.py
-tests/test_shortestpath.py
+tests/__init__.py
+tests/_test_shortest_path.py
+tests/test_mean_custom.py

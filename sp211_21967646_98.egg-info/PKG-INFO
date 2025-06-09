@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: sp211_21967646_98
-Version: 0.1.1
+Version: 0.1.2
 Summary: Kısa yol algoritmalarını içeren örnek Python paketi
 Home-page: https://github.com/aaybukekucuk/sp211_21967646_98
 Author: Aybuke Kucuk
@@ -39,6 +39,7 @@ Aşağıdaki görsel oluşturduğum Sphinx dökümantasyonun web ekran görünt�
 
 ![Sphinx Ekran Görüntüsü ](https://github.com/user-attachments/assets/d65c1e61-100f-4301-93c6-5f4b39a20083)
 
+index.html.url : file:///C:/Users/ELV%C4%B0N/Desktop/sp211_21967646_98/docs/build/html/index.html
 ---
 
 ## Fonksiyon tablosu
@@ -63,11 +64,11 @@ My level of AI usage 4/5
 ---
 ## Logging Kullanımı
 
-Bu projede, programın çalışma sürecinde oluşan önemli olayları takip etmek için Python’un standart logging modülü kullanılmıştır. logging sayesinde hata mesajları, uyarılar veya bilgi mesajları kayıt altına alınabilir ve böylece kodun nasıl çalıştığını anlamak ve hataları kolayca tespit etmek mümkün olur.
+Bu projede, programın çalışma sürecinde oluşan önemli olayları takip etmek için Python’un standart logging modülü kullandım. Logging sayesinde hata mesajları, uyarılar veya bilgi mesajları kayıt altına alınabilir ve böylece kodun nasıl çalıştığını anlamak ve hataları kolayca tespit etmek mümkün olur.
 
 import logging
 
-# Logging seviyesini ayarla
+Logging seviyesini ayarla
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 logging.info("Program başladı.")
@@ -104,3 +105,5 @@ shortestpath_project/
 
 Not: GitHub Classroom üzerinden gönderim sırasında teknik sorunlar yaşadım. Classroom bağlantısıyla ilişkilendirilmiş repo üzerinde push/pull işlemleri sırasında kimlik doğrulama hataları aldım ve çözüme ulaşamadım. Bu nedenle, projemi kişisel GitHub hesabımda 
 [bu repo](https://github.com/aaybukekucuk/sp211_21967646_98.git) üzerinden eksiksiz şekilde yayımladım.
+=======
+code README.md

@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='sp211_21967646_98',
-    version='0.1.1',
+    version='0.1.2',
     author='Aybuke Kucuk',
     author_email='aaybukekucuk@gmail.com',  
     description='Kısa yol algoritmalarını içeren örnek Python paketi',
