@@ -84,5 +84,4 @@ shortestpath_project/
 Not: GitHub Classroom üzerinden gönderim sırasında teknik sorunlar yaşadım. Classroom bağlantısıyla ilişkilendirilmiş repo üzerinde push/pull işlemleri sırasında kimlik doğrulama hataları aldım ve çözüme ulaşamadım. Bu nedenle, projemi kişisel GitHub hesabımda 
 [bu repo](https://github.com/aaybukekucuk/sp211_21967646_98.git) üzerinden eksiksiz şekilde yayımladım.
 =======
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/UJ8VLwsI)
->>>>>>> class-origin/main
+code README.md
